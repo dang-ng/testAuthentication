@@ -1,0 +1,40 @@
+﻿@page
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model ContactModel
+@{
+}
+
+<h1>Contact Form</h1>
+<form enctype="multipart/form-data" method="post" asp-page="Contact" class="m-2 p-3 alert-primary">
+    <div class="form-group">
+        <label asp-for="customerInfo.Name"></label>
+        <input class="form-control" asp-for="customerInfo.Name"/>
+        <span class="text-danger" asp-validation-for="customerInfo.Name"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="customerInfo.Email"></label>
+        <input class="form-control" asp-for="customerInfo.Email"/>
+        <span class="text-danger" asp-validation-for="customerInfo.Email"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="customerInfo.YearOfBirth"></label>
+        <input class="form-control" asp-for="customerInfo.YearOfBirth"/>
+        <span class="text-danger" asp-validation-for="customerInfo.YearOfBirth"></span>
+    </div>
+    <div class="form-group">
+            <label asp-for="FileUpload"></label>
+            <input class="form-control" asp-for="FileUpload"/>
+            <span class="text-danger" asp-validation-for="FileUpload"></span>
+        </div>
+    <button type="submit" class="btn btn-danger">Gui thong tin</button>
+</form>
+
+@if (@Model.customerInfo != null && ModelState.IsValid)
+{
+    <p>Thong tin nhan duoc</p>
+    <ul>
+        <li>Username: @Model.customerInfo.Name</li>
+        <li>Email: @Model.customerInfo.Email</li>
+        <li>YoB: @Model.customerInfo.YearOfBirth</li>
+    </ul>
+}
