@@ -1,10 +1,14 @@
-﻿
-using MailKit.Security;
+﻿using MailKit.Security;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.Extensions.Options;
 using MimeKit;
-using WebApplication6.Services;
 
+public class MailContent
+{
+    public string To { get; set; }              
+    public string Subject { get; set; }        
+    public string Body { get; set; } 
+}
 public class MailSettings
 {
     public string Mail { get; set; }

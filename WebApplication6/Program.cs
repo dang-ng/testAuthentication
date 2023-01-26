@@ -1,9 +1,8 @@
-using System.Configuration;
+using System.Security.Policy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using WebApplication6.Models;
-using WebApplication6.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
